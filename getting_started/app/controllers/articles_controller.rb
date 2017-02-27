@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   http_basic_authenticate_with name: "chris", 
   password: "asdf", except: [:index, :show]
 
-	def index
+  def index
     @articles = Article.all
   end
 
@@ -13,14 +13,13 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-	end
+  end
 
   def edit
     @article = Article.find(params[:id])
   end
 
-	def create
-
+  def create
     @article = Article.new(article_params)
 
     if @article.save
@@ -29,7 +28,7 @@ class ArticlesController < ApplicationController
       render 'new'
     end
     #render plain: params[:article].inspect
-	end
+  end
 
   def update
     @article = Article.find(params[:id])
