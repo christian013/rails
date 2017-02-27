@@ -1,0 +1,20 @@
+doctype html
+  html
+    head
+      meta name="content" content="text/html; charset=UTF-8"
+      meta name="http-equiv" content="Content-Type"
+    body
+      h1
+        | Welcome to my blog, 
+        = @user.name
+      p
+        | You have succeeded with signing up on my blog. 
+        | Your username is: 
+        = @user.login
+        br
+      p
+        | Please follow this link to login: 
+        = @url
+      p
+        | Thank you for joining, see you on my blog!
+
