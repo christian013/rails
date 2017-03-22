@@ -5,6 +5,8 @@ p
   strong Text: 
   = @article.text
 
+= image_tag @article.image_.url(:medium)
+
 h2 Comments
 = render @article.comments
 
