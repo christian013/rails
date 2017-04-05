@@ -31,6 +31,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'slim-rails'
 gem "paperclip", "~> 5.0.0"
+gem 'bootstrap-datepicker-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

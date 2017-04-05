@@ -11,14 +11,24 @@
   p
     = f.label :title
     br
-    = f.text_field :title
+    = f.text_field :title, :class => 'title'
   p
     = f.label :text
     br
     = f.text_area :text
+  p
+    = f.label :date_published
+    br
+    = f.date_field :date_published, :maxlength => 10, :placeholder => "YYYY-MM-DD", :class => 'datepicker'
+
+
+    /:data => {:provide => "datepicker"}
   p
     = f.label :image_
     br
     = f.file_field :image_
   p
     = f.submit
+
+p#test_id
+  | Testtesttesttest

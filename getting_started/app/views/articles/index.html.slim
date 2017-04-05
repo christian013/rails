@@ -1,5 +1,45 @@
 h1 Listing articles
 = link_to 'New article', new_article_path
 br
-= render @articles
+
+br
+table
+  tr
+    th Title
+    th Text
+    th colspan="2"
+  - @articles.each do |article|
+	tr
+	  td = article.title
+	  td = article.text
+	  td = link_to 'Show', article_path(article)
+	  td = link_to 'Edit', edit_article_path(article)
+	  td = link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?'}
+br
+
+h2 Comments
+
+/- @articles.each do |article|
+  = render article.comments
+
+table
+  tr
+    th Commenter
+    th Body
+    th Article
+  - @articles.each do |article|
+    - article.comments.each do |comment|
+      tr
+        td
+          = comment.commenter
+        td
+          = comment.body
+        td
+          = article.title
+  /tr
+    = render 'comments/commentinfo', locals: {comments: article.comments}
+
+
+
+/= render @articles
 

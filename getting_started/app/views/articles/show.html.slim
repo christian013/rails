@@ -5,6 +5,10 @@ p
   strong Text: 
   = @article.text
 
+p
+  strong Date: 
+  = @article.date_published
+
 = image_tag @article.image_.url(:medium)
 
 h2 Comments
